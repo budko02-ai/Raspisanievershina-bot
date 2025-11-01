@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Центр «Вершина знаний»</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f8fa;
+      color: #222;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+    h1 {
+      font-size: 22px;
+      color: #1c71d8;
+    }
+    button {
+      background: #1c71d8;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1359a6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Добро пожаловать в «Вершину знаний» 🐧</h1>
+    <p>Через это приложение можно управлять расписанием и выплатами.</p>
+    <button onclick="sendData()">Подтвердить занятие</button>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function sendData() {
+      tg.sendData(JSON.stringify({ action: 'confirm_lesson' }));
+    }
+  </script>
+</body>
+</html>
