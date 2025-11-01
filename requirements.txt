@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+aiogram
+gspread
+oauth2client
+apscheduler
+pandas
+openpyxl
